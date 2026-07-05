@@ -1,0 +1,41 @@
+.hero { padding: 8rem 4rem 5rem; background: var(--white); position: relative; overflow: hidden; }
+.hero-noise {
+  position: absolute; inset: 0; pointer-events: none; opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: var(--bg); border: 1px solid var(--border); border-radius: 999px;
+  padding: 0.4rem 1rem; margin-bottom: 1.75rem;
+  font-size: 0.78rem; font-weight: 600; color: var(--muted);
+}
+.badge-dot { width: 8px; height: 8px; background: var(--lime-dk); border-radius: 50%; animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.hero h1 {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: clamp(2.8rem, 5.5vw, 4.6rem); line-height: 1.05;
+  color: var(--navy); margin-bottom: 1.5rem; letter-spacing: -1.5px;
+}
+.hero h1 em { font-style: normal; color: var(--navy); background: var(--lime); padding: 2px 8px; border-radius: 4px; }
+.hero-sub { font-size: 1rem; color: var(--muted); max-width: 440px; margin-bottom: 2.5rem; line-height: 1.8; }
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-visual { position: relative; }
+.hero-visual img { width: 100%; border-radius: 16px; display: block; object-fit: cover; aspect-ratio: 4/3.2; box-shadow: 0 24px 56px var(--shadow); }
+.hero-card {
+  position: absolute; background: var(--white); border-radius: 12px;
+  padding: 1rem 1.3rem; box-shadow: 0 12px 32px var(--shadow);
+  display: flex; flex-direction: column; gap: 0.2rem;
+  border: 1px solid var(--border);
+}
+.hero-card strong { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--navy); }
+.hero-card span { font-size: 0.72rem; color: var(--muted); font-weight: 500; }
+.card1 { bottom: -1rem; left: -1.5rem; }
+.card2 { top: 1.5rem; right: -1.5rem; }
+@media (max-width: 960px) {
+  .hero { padding: 7rem 1.5rem 4rem; }
+  .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-visual { order: -1; }
+  .card1 { left: 1rem; bottom: -0.5rem; }
+  .card2 { right: 1rem; }
+}

@@ -1,0 +1,13 @@
+.clients-section { background: var(--navy); padding: 2.5rem 0; overflow: hidden; }
+.clients-label { text-align: center; font-size: 0.72rem; color: rgba(255,255,255,0.35); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 1.5rem; }
+.clients-track-wrap { overflow: hidden; }
+.clients-track { display: flex; width: max-content; animation: scroll 28s linear infinite; gap: 0; }
+.client-name {
+  font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 800;
+  color: rgba(255,255,255,0.22); white-space: nowrap; padding: 0 3rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  transition: color 0.2s;
+}
+.client-name:hover { color: var(--lime); }
+@keyframes scroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
